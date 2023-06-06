@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../JS/JS.js"></script>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,100;1,200;1,300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+
+}
+
+body{
+    
+    background-image:url("../Pictures/photoLogin.jpg") ; 
+   background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+    
+
+    
+    
+}
+
+.login-page {
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+  position: relative;
+  filter:drop-shadow(0 0 2px #000000);
+  border-radius: 5px;
+  width: 360px;
+  
+  background-color: #ffffff;
+  padding:40px;
+}
+
+.form img {
+    position: absolute;
+    height: 20px;
+    top: 230px;
+    right: 60px;
+    cursor: pointer;
+}
+
+.form input {
+    outline: 0;
+    background: #f2f2f2;
+    border-radius: 4px;
+    width: 100%;
+    border: 0;
+    margin: 15px 0;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.form input:focus {
+    box-shadow: 0 0 5px 0 rgba(106, 98, 210);
+}
+
+span {
+    color: red;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.form button {
+    outline: 0;
+    background: #6a62d2;
+    width: 100%;
+    border: 0;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background: black;
+    color: #fff;
+
+}
+
+.message{
+    margin: 15px 0;
+    text-align: center;
+
+}
+.form .message a {
+    font-size: 14px;
+    color: #6a62d2;
+    text-decoration: none;
+}
+h1 {
+    color:white;
+}
+
+	</style>
+</head>
+
+<header>
+    <br>
+    <br>
+    <h1 class="text-custom-white fw-600 text-center">Welcome to Class Master</h1>
+</header>
+<body>
+
+<div class="login-page">
+        <div class="form card">
+           <h4 class="mb-3">SIGN IN TO YOUR ACCOUNT</h4>
+           <ul class="nav nav-tabs mb-3">
+                <li class="nav-item"> <a class="nav-link fw-600 active user-toggle" data-login="user" data-toggle="tab" href="#!">User</a>
+                </li>
+                <li class="nav-item"> <a class="nav-link fw-600 user-toggle" data-login="manager" data-toggle="tab" href="#!">Manager</a>
+                </li>
+            </ul>
+            <form class="login-form " onsubmit="return formvalid()" target="_blank">
+                
+                <input type="text" required placeholder="Username" id="username" autocomplete="off" />
+                <input type="password" required placeholder="Password" id="password" autocomplete="off" />
+                
+                
+                <button type="submit">SIGN IN</button>
+                <p class="message"><a href="../Includes/signup.html">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.7.0.min.js"
+  integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+  crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      
+        var user_type = 'user';
+        $(".user-toggle").click(function(){
+            if($(this).data('login')=='user'){
+                user_type = 'user';
+            }else{
+                user_type = 'manager';
+            }
+        })
+    
+    
+function formvalid() {
+   var usernameInput = document.getElementById("username");
+   var passwordInput = document.getElementById("password");
+   var username = usernameInput.value;
+   var password = passwordInput.value;
+
+   if (user_type === 'user') {
+      if (username === "" || password === "") {
+         alert("Please enter a username and password.");
+         return false;
+      } else {
+         // Send AJAX request to login.php
+         $.ajax({
+            url: "../Includes/login.php",
+            type: "POST",
+            data: { username: username, password: password },
+            success: function(response) {
+               if (response === "success") {
+                  localStorage.setItem("isLoggedIn", "true");
+                  localStorage.setItem("userType", user_type);
+                  window.location.href = "../Includes/homepage.html";
+               } else {
+                  alert("Invalid username or password.");
+               }
+            },
+            error: function() {
+               alert("An error occurred during login.");
+            }
+         });
+         
+         return false; // Prevent form submission
+      }
+   } else if (user_type === 'manager') {
+      if (username === "manager123" && password === "manager123") {
+         localStorage.setItem("isLoggedIn", "true");
+         localStorage.setItem("userType", user_type);
+         window.location.href = "../Includes/homepage.html";
+         return false; // Valid credentials, allow form submission
+      } else {
+         alert("Invalid username or password.");
+         return false; // Invalid credentials, prevent form submission
+      }
+   }
+}
+        
+        
+    </script>
+    
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="../Css/classes.css">
+   <script src="../JS/JS.js"></script>
+   
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <title>Our classes</title>
+	 <link rel="icon" href="../Pictures/logo4.jpg" type="image/icon type">
+	
+   <!-- for navbar-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
+
+  <link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+   
+   <!--footer css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title> Our classes</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+<style>
+.list-group-item:hover {
+  cursor: default;
+}
+</style>
+
+
+
+  </head>
+  <body>
+      <b>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <div class="container-fluid">
+    <a href="../Includes/homepage.html" class="navbar-brand"><b>ClassMaster</b> Classes</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleBtn">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../Includes/classes.html">Our classes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/teamTeachers.html">Team teachers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/ongoing_activity.html">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a id="shoppingCartLink" class="nav-link" href="../Includes/shoppingcart.php">Shopping cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="logout()" style="cursor: pointer;">
+            <svg width="16" height="16" fill="currentColor">
+              <path d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+              <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Add event listener to the hamburger menu button
+    $("#navbarToggleBtn").click(function() {
+      // Toggle the collapse state of the menu
+      $("#navbarNavDropdown").collapse('toggle');
+    });
+  });
+</script>
+
+
+
+    
+    </b>
+
+
+<script>
+    
+      document.addEventListener("DOMContentLoaded", function() {
+        var isLoggedIn = localStorage.getItem("isLoggedIn");
+        var userType = localStorage.getItem("userType");
+
+        if (isLoggedIn === "true") {
+            if (userType === "user") {
+                // Remove the shopping cart link for user
+                var shoppingCartLink = document.getElementById("shoppingCartLink");
+                shoppingCartLink.parentNode.removeChild(shoppingCartLink);
+            }
+        }
+    });
+    
+    
+    
+</script>
+   </b>
+	<div class="classes">
+		<!-- Header -->
+	  <div class="headerr">
+	      
+		<h1><b>All our classes</b></h1>
+	  </div>
+
+	  <!-- Photo Grid -->
+		  <!-- Row 1 -->
+	  <div class="card-deck">
+		  <div class="card">
+			<img class="card-img-top" src="../Pictures/draw.jpg" alt="Company logo">
+			
+			
+			<div class="card-body">
+			  <h5 class="card-title">Drawing</h5>
+			  <ul class="list-group">
+				
+				<li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i> Revital Cohen</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i><a href="#" onclick="openMapPopup('Haeshel 12, Ramat Gan')">Haeshel 12, Ramat Gan</a></li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   1.5 hours</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   150 NIS </li>
+			  </ul>
+			  
+			</div>
+			
+			<div class="tal"><b> In this class, students will learn about the theory and techniques of various visual arts, including painting and drawing.
+			<br>As teacher of this class, i will provide guidance and feedback to help students improve their skills and develop their own personal style.
+			<br>Whether you are a beginner or an experienced artist, this class is designed to inspire and challenge you to reach your full creative potential.
+			</b></div>
+			<br>
+			<div class="col-12">
+              <a class="btn btn-info" href="../Includes/drawing.html" role="button">Register</a>
+             
+            </div>
+             
+		  </div>
+		  <div class="card">
+			<img class="card-img-top" src="../Pictures/pisul.jpg" alt="Company logo">
+			<div class="card-body">
+			  <h5 class="card-title">Sculpture</h5>
+			  <ul class="list-group">
+				
+				<li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Yoram Elazar</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i><a href="#" onclick="openMapPopup('Yehuda HaMakkabbi 37, Tel Aviv')"> Yehuda HaMakkabbi 37, Tel Aviv</a> </li>
+				
+				<li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   2 hours</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   200 NIS</li>
+			  </ul>
+			  
+			</div>
+		
+			<script>
+function openMapPopup(address) {
+    event.preventDefault();
+  // Create a URL for the Google Maps location based on the address
+  var mapUrl = 'https://www.google.com/maps?q=' + encodeURIComponent(address) ;
+  
+  // Set the width and height of the pop-up window
+  var width = 600;
+  var height = 400;
+  
+  // Calculate the position of the pop-up window to center it on the screen
+  var left = (window.innerWidth - width) / 2;
+  var top = (window.innerHeight - height) / 2;
+  
+  // Open the pop-up window with the Google Maps URL
+  window.open(mapUrl, 'Map', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+}
+</script>
+			<div class="tal"><b>In this class, students will learn about the different types of sculpture, including additive and subtractive methods. They will also learn about the design principles of sculpture. As teacher i will provide guidance and feedback to help students improve their skills and create unique and beautiful sculptures. Whether you are a beginner or an experienced sculptor, this class is designed to inspire your creativity and give you the skills you need to make sculptures.
+			</b></div>
+			<br>
+			<div class="col-12">
+              <a class="btn btn-info" href="../Includes/sculpture.html" role="button">Register</a>
+             
+		  </div>
+		  </div>
+		  <div class="card">
+			<img class="card-img-top" src="../Pictures/keramika.jpg" alt="Company logo">
+			<div class="card-body">
+			  <h5 class="card-title">Ceramics</h5>
+			  <ul class="list-group">
+
+				<li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   May Moledet</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i><a href="#" onclick="openMapPopup('Bialik 7, Ramat Gan')"> Bialik 7, Ramat Gan</a></li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   1.5 hours</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   120 NIS</li>
+			  </ul>
+			  
+			</div>
+			<div class="tal"><b>In this class, students will learn about the different types of clay and how to work with them using various techniques, including hand-building and wheel-throwing. 
+			As teacher of this class, i will provide guidance and feedback to help students improve their skills and create unique and beautiful pieces.
+			<br>This class is designed to inspire your creativity and give you the skills you need to make functional and artistic ceramics that you can be proud of.
+			</b></div>
+		  	<br>
+			<div class="col-12">
+              <a class="btn btn-info" href="../Includes/ceramics.html" role="button">Register</a>
+             
+		  </div>
+		  </div>
+		</div>
+		 <div class="sep"></div>
+		
+		  <!-- Row 1 -->
+		
+		  <div class="card-deck">
+		  <div class="card">
+			<img class="card-img-top" src="../Pictures/psipas.jpg" alt="Company logo">
+			<div class="card-body">
+			  <h5 class="card-title">Mosaic</h5>
+			  <ul class="list-group">
+			   
+				<li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Dayana Reuven</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i><a href="#" onclick="openMapPopup('Rambam 26, Holon')"> Rambam 26, Holon</a></li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   2.5 hours</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   250 NIS</li>
+			  </ul>
+			  
+			</div>
+			<div class="tal"><b>In this class, students will learn about the different materials used in mosaics, and the techniques used to create intricate patterns and designs. As teacher of the class i will provide guidance and feedback to help students improve their skills and create unique and beautiful mosaic art. Whether you are a beginner or an experienced artist, this class is designed to inspire your creativity and give you the skills you need to make intricate and visually striking mosaic art that you can proudly display in workplace.</b></div>
+		  <br>
+			<div class="col-12">
+              <a class="btn btn-info" href="../Includes/mosaic.html" role="button">Register</a>
+             
+		  </div>
+		  </div>
+		  <div class="card">
+			<img class="card-img-top" src="../Pictures/geves.jpg" alt="Company logo">
+			<div class="card-body">
+			  <h5 class="card-title">Gypsum sculpture</h5>
+			  <ul class="list-group">
+				
+				<li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Dror David</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i><a href="#" onclick="openMapPopup('Haim Ben Atar 12, Tel Aviv')">Haim Ben Atar 12, Tel Aviv</a></li> 
+				<li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   1 hour 45 minutes</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   150 NIS</li>
+			  </ul>
+			  
+			</div>
+			<div class="tal"><b>In this class, students will learn about the properties of gypsum and how to sculpt and shape it into different forms and textures using various tools and techniques. As teacher of the class i will provide guidance and feedback to help students improve their skills and create meaningful and expressive sculptures. Whether you are a beginner or an experienced artist, this class is designed to inspire your creativity and give you the skills you need to make gypsum sculptures that are both beautiful and meaningful.
+	</b></div>
+		  <br>
+			<div class="col-12">
+              <a class="btn btn-info" href="../Includes/gypsum-sculpture.html" role="button">Register</a>
+             
+		  </div>
+		  </div>
+		  <div class="card">
+			<img class="card-img-top" src="../Pictures/Plastelina.jpg" alt="Company logo">
+			<div class="card-body">
+			  <h5 class="card-title">Plasticine</h5>
+			  <ul class="list-group">
+			   
+				<li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Yossef Zalman</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-map-marker"style="font-size:20px;"></i> <a href="#" onclick="openMapPopup('Zeev Jabotinsky 60, Ramat Gan')">Zeev Jabotinsky 60, Ramat Gan</a></li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-clock-o"style="font-size:20px;"></i>   1 Hour</li>
+				<li class="list-group-item list-group-item-success"><i class="fa fa-inr"style="font-size:20px;"></i>   70 NIS</li>
+			  </ul>
+			  
+			</div>
+			  
+			<div class="tal"><b>In this class, students will learn about the different properties of Plasticine, including how it can be molded and shaped into different forms and textures. As teacher of the class i will provide guidance and feedback to help students improve their skills and create unique and beautiful Plasticine creations. Whether you are a beginner or an experienced artist, this class is designed to inspire your creativity and give you the skills you need to make colorful and imaginative Plasticine creations.
+			</b></div>
+		<br>
+			<div class="col-12">
+              <a class="btn btn-info" href="../Includes/plasticine.html" role="button">Register</a>
+             
+		  </div>
+		  </div>
+		  </div>
+	  <div class="sep"></div>
+
+	<!--Modal 1-->
+	  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Modal title 1</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+		
+	   <!--Modal 2-->
+	  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Modal title 2</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	  
+		<!--Modal 2-->
+	  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Modal title 3</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+		<!--Modal 4-->
+	  <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Modal title 4</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+		<!--Modal 5-->
+	  <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Modal title 5</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+		<!--Modal 6-->
+	  <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Modal title 6</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			...
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </div>
+  
+ <!--footer-->
+  <footer class="footer-area footer--light">
+  <div class="footer-big">
+    <!-- start .container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="footer-widget">
+            <div class="widget-about">
+              
+              <p class="pha"><b>With us you can find any art class that interests you, and with one click register for it. Feel free to contact us for any reason you may have ♥</b></p>
+              
+            </div>
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-4 -->
+     
+        <!-- end /.col-md-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h4 class="footer-widget-title tit"><b>Quick Links:</b></h4>
+              <ul>
+                <li class="li1">
+                  <a href="../Includes/homepage.html" class="aaa">Home</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/classes.html" class="aaa">Our classes</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/teamTeachers.html" class="aaa">Our teachers</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/ongoing_activity.html" class="aaa">Activities</a>
+                </li>
+                 <li class="li1">
+                            
+        		    <a  onclick="logout()" class="aaa" style="cursor: pointer;">Log out</a>
+                </li>
+               
+                
+                
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-lg-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Contact us:</b></h4>
+              <ul>
+				<li class="li1">
+				<i class="fas fa-mobile-alt" style="font-size:24px"></i>
+                  <a href="tel:344-755-111" class="aaa">03-7544321</a>
+               </li>
+                <li class="li1">
+                   <i class="far fa-envelope-open" ></i> 
+                 <a href="mailto:ClassMasterOn@gmail.com" title="click to send mail">ClassMasterOn@gmail.com</a>
+                </li>
+				<li class="li1">
+				
+				<i class="fa fa-map-marker"style="font-size:20px;"></i> <a href="#" onclick="openMapPopup('Pinkas 4, Tel Aviv-Yafo')">Pinkas 4, Tel Aviv-Yafo</a></a>
+				</li>
+
+               	<script>
+function openMapPopup(address) {
+    event.preventDefault();
+  // Create a URL for the Google Maps location based on the address
+  var mapUrl = 'https://www.google.com/maps?q=' + encodeURIComponent(address) ;
+  
+  // Set the width and height of the pop-up window
+  var width = 600;
+  var height = 400;
+  
+  // Calculate the position of the pop-up window to center it on the screen
+  var left = (window.innerWidth - width) / 2;
+  var top = (window.innerHeight - height) / 2;
+  
+  // Open the pop-up window with the Google Maps URL
+  window.open(mapUrl, 'Map', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+}
+</script>
+               	
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- Ends: .col-lg-3 -->
+		<div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Follow us:</b></h4>
+             <ul class="list-group">
+			  <li  class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a ><i class="fab fa-linkedin"></i> LinkedIn</a>
+			  </li>
+				 <a ><i class="fab fa-tumblr-square"></i> Twitter</a>       
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2"> 
+			  
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a href="https://github.com/maybakoch/classmaster" class="aaa" target="_blank"><i class="fab fa-git-square"></i> Github</a>
+				
+				<li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a class="aaa" target="_blank"><i class="fab fa-facebook-f" ></i> Facebook</a>
+			  </li>
+			 </ul>
+            
+			</div>
+		  </div>
+		</div>
+   </div>
+     
+      <!-- end /.row -->
+    </div>
+    <!-- end /.container -->
+  </div>
+  <!-- end /.footer-big -->
+
+  <div class="mini-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            
+               © Copyright 2023 - ClassMaster.  All rights reserved 
+			  
+              
+           
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  </body>
+
+</html>

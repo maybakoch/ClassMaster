@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../Css/classes.css">
+   <script src="../JS/JS.js"></script>
+  
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Our team teachers</title>
+   <link rel="icon" href="../Pictures/logo4.jpg" type="image/icon type">
+  
+    <!-- for navbar-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ 
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" 
+  rel="stylesheet">
+     
+     <!-- for icon footer-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+  body {
+    background-image: url("../Pictures/backTeam.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100% 90%;
+    background-position: top left;
+  }
+  
+  
+.social-icons:hover {
+  cursor: default;
+}
+
+</style>
+
+  
+  </head>
+  <body>
+      <b>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <div class="container-fluid">
+    <a href="../Includes/homepage.html" class="navbar-brand"><b>ClassMaster</b> Team teachers</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleBtn">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../Includes/classes.html">Our classes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/teamTeachers.html">Team teachers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/ongoing_activity.html">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a id="shoppingCartLink" class="nav-link" href="../Includes/shoppingcart.php">Shopping cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="logout()" style="cursor: pointer;">
+            <svg width="16" height="16" fill="currentColor">
+              <path d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+              <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Add event listener to the hamburger menu button
+    $("#navbarToggleBtn").click(function() {
+      // Toggle the collapse state of the menu
+      $("#navbarNavDropdown").collapse('toggle');
+    });
+  });
+</script>
+
+
+
+    
+    </b>
+      
+          
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var isLoggedIn = localStorage.getItem("isLoggedIn");
+        var userType = localStorage.getItem("userType");
+
+        if (isLoggedIn === "true") {
+            if (userType === "user") {
+                // Remove the shopping cart link for user
+                var shoppingCartLink = document.getElementById("shoppingCartLink");
+                shoppingCartLink.parentNode.removeChild(shoppingCartLink);
+            }
+        }
+    });
+</script>
+ 
+    <!-- Header -->
+	<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+		
+	</header>
+		
+		<main>
+			<div class="responsive-container-block container">
+			  <p class="text-blk team-head-text">
+				Our Team Teachers
+			  </p>
+			  <div class="responsive-container-block">
+				<div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+				  <div class="card">
+					<div class="team-image-wrapper">
+					  <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert1.png"
+						class="team-member-image" />
+					</div>
+					<p class="text-blk name">Revital Cohen
+					</p>
+					<p class="text-blk position">Drawing Teacher
+					</p>
+					<p class="text-blk feature-text">Renowned Artist with a Keen Eye for Detail, Guiding Students to Develop Proficient Drawing Skills, Unleashing their Artistic Style and Voice,Has several years of experience in the field.
+					</p>
+					<div class="social-icons">
+					  <a target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+						  class="twitter-icon" />
+					  </a>
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+						  class="facebook-icon" />
+					  </a>
+					</div>
+				  </div>
+				</div>
+				<div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+				  <div class="card">
+					<div class="team-image-wrapper">
+					  <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/expert2.png"
+						class="team-member-image" />
+					</div>
+					<p class="text-blk name"> Yoram Elazar
+					</p>
+					<p class="text-blk position">Sculpture Teacher
+					</p>
+					<p class="text-blk feature-text">Master Sculptor with Decades of Experience, teaches his students with Techniques and Insight to Create Sculptural Marvels, <br>from Classical to <br>Contemporary.
+					</p>
+					<div class="social-icons">
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+						  class="twitter-icon" />
+					  </a>
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+						  class="facebook-icon" />
+					  </a>
+					</div>
+				  </div>
+				</div>
+				<div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+				  <div class="card">
+					<div class="team-image-wrapper">
+					  <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET7.14.png"
+						class="team-member-image" />
+					</div>
+					<p class="text-blk name">Yossef Zalman
+					</p>
+					<p class="text-blk position">Plasticine Teacher
+					</p>
+					<p class="text-blk feature-text">Creative Artist with a Knack for Modeling, Teaching Students to Craft their Ideas with Plasticine, Developing a Keen Eye for Detail and a Passion for Artistic Expression.
+					</p>
+					<div class="social-icons">
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+						  class="twitter-icon" />
+					  </a>
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+						  class="facebook-icon" />
+					  </a>
+					</div>
+				  </div>
+				</div>
+				<div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+				  <div class="card">
+					<div class="team-image-wrapper">
+					  <img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET7.15.png"
+						class="team-member-image" />
+					</div>
+					<p class="text-blk name">May Moledet
+					</p>
+					<p class="text-blk position">Ceramics Teacher
+					</p>
+					<p class="text-blk feature-text">Experienced Ceramicist with a Passion for Clay, Inspiring Students to Experiment with Techniques, Glazes, and Firing, and Create Functional and Artistic Pottery Masterpieces.
+					</p>
+					<div class="social-icons">
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+						  class="twitter-icon" />
+					  </a>
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+						  class="facebook-icon" />
+					  </a>
+					</div>
+				  </div>
+				</div>
+				<div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+				  <div class="card">
+					<div class="team-image-wrapper">
+					  <img src="../Pictures/dana.png"
+						class="team-member-image" />
+					</div>
+					<p class="text-blk name">Dror David
+					</p>
+					<p class="text-blk position">Gypsum sculpture Teacher
+					</p>
+					<p class="text-blk feature-text">Expert in Gypsum Sculpting with an Artistic Vision, Inspiring Students to Shape Gypsum into Detailed, Unique and Stunning Sculptures, from Miniatures to Life-sized.<br><br>
+					</p>
+					<div class="social-icons">
+					  <a target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+						  class="twitter-icon" />
+					  </a>
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+						  class="facebook-icon" />
+					  </a>
+					</div>
+				  </div>
+				</div>
+				<div class="responsive-cell-block wk-desk-3 wk-ipadp-3 wk-tab-6 wk-mobile-12 card-container">
+				  <div class="card">
+					<div class="team-image-wrapper">
+					  <img src="../Pictures/anna.png"
+						class="team-member-image" />
+					</div>
+					<p class="text-blk name">Dayana Reuven
+					</p>
+					<p class="text-blk position">Mosaic Teacher
+					</p>
+					<p class="text-blk feature-text">Master Mosaicist with a Creative Flair, Teaching Students the Art of Composition, Color Theory, and Techniques to Design and Execute Breathtaking <br>Mosaics.
+					</p>
+					<div class="social-icons">
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon.svg"
+						  class="twitter-icon" />
+					  </a>
+					  <a  target="_blank">
+						<img src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Icon-1.svg"
+						  class="facebook-icon" />
+					  </a>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			
+		</main>
+ <!--footer-->
+  <footer class="footer-area footer--light">
+  <div class="footer-big">
+    <!-- start .container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="footer-widget">
+            <div class="widget-about">
+              
+              <p class="pha"><b>With us you can find any art class that interests you, and with one click register for it. Feel free to contact us for any reason you may have ♥</b></p>
+              
+            </div>
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-4 -->
+     
+        <!-- end /.col-md-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h4 class="footer-widget-title tit"><b>Quick Links:</b></h4>
+              <ul>
+                <li class="li1">
+                  <a href="../Includes/homepage.html" class="aaa">Home</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/classes.html" class="aaa">Our classes</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/teamTeachers.html" class="aaa">Our teachers</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/ongoing_activity.html" class="aaa">Activities</a>
+                </li>
+                 <li class="li1">
+                            
+        		    <a  onclick="logout()" class="aaa" style="cursor: pointer;">Log out</a>
+                </li>
+               
+                
+                
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-lg-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Contact us:</b></h4>
+              <ul>
+				<li class="li1">
+				<i class="fas fa-mobile-alt" style="font-size:24px"></i>
+                  <a href="tel:344-755-111" class="aaa">03-7544321</a>
+               </li>
+                <li class="li1">
+                   <i class="far fa-envelope-open" ></i> 
+                 <a href="mailto:ClassMasterOn@gmail.com" title="click to send mail">ClassMasterOn@gmail.com</a>
+                </li>
+				<li class="li1">
+				
+				<i class="fa fa-map-marker"style="font-size:20px;"></i> <a href="#" onclick="openMapPopup('Pinkas 4, Tel Aviv-Yafo')">Pinkas 4, Tel Aviv-Yafo</a></a>
+				</li>
+
+               	<script>
+function openMapPopup(address) {
+    event.preventDefault();
+  // Create a URL for the Google Maps location based on the address
+  var mapUrl = 'https://www.google.com/maps?q=' + encodeURIComponent(address) ;
+  
+  // Set the width and height of the pop-up window
+  var width = 600;
+  var height = 400;
+  
+  // Calculate the position of the pop-up window to center it on the screen
+  var left = (window.innerWidth - width) / 2;
+  var top = (window.innerHeight - height) / 2;
+  
+  // Open the pop-up window with the Google Maps URL
+  window.open(mapUrl, 'Map', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+}
+</script>
+               	
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- Ends: .col-lg-3 -->
+		<div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Follow us:</b></h4>
+             <ul class="list-group">
+			  <li  class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a ><i class="fab fa-linkedin"></i> LinkedIn</a>
+			  </li>
+				 <a ><i class="fab fa-tumblr-square"></i> Twitter</a>       
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2"> 
+			  
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a href="https://github.com/maybakoch/classmaster" class="aaa" target="_blank"><i class="fab fa-git-square"></i> Github</a>
+				
+				<li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a class="aaa" target="_blank"><i class="fab fa-facebook-f" ></i> Facebook</a>
+			  </li>
+			 </ul>
+            
+			</div>
+		  </div>
+		</div>
+   </div>
+     
+      <!-- end /.row -->
+    </div>
+    <!-- end /.container -->
+  </div>
+  <!-- end /.footer-big -->
+
+  <div class="mini-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            
+               © Copyright 2023 - ClassMaster.  All rights reserved 
+			  
+              
+           
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  </body>
+
+</html>

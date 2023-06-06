@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../Css/classes.css">
+  <link rel="stylesheet" type="text/css" href="../Css/cssgooglemaps.css">
+  <script src="../JS/JS.js"></script>
+   <script src="../JS/googlemapsjs.js"></script>
+    <script src="../JS/location.js"></script>
+     <link rel="icon" href="../Pictures/logo4.jpg" type="image/icon type">
+   
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <!-- Include Bootstrap Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/css/bootstrap.min.css" integrity="sha512-lXQr3X/mocLnFQGzRfHjjg+QgM8MYi3P/p5jxW5FF4iQW1vi68V5rcyaUpYmLJHyIFtqTVm3c3GBsQgmbXoqWw==" crossorigin="anonymous" />
+
+<!-- Include Bootstrap Carousel JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.5.0/js/bootstrap.bundle.min.js" integrity="sha512-YwpjGFqF47wGDTtDhEOEnZjvUDcBCmR2fep2oLlDAsSP3q2pdsXyHjgttA3UP9VutbN17ZaHYU9Ym88c2RVGvQ==" crossorigin="anonymous"></script>
+
+<!--GOOGLE MAPS CSS-->
+
+   <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+  
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+    <!-- place -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+   
+ 
+<title> Class master</title>
+
+  
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>     
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+ <!--photo click -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+<style>
+.list-group:hover {
+  cursor: default;
+}
+</style>
+
+  </head>
+  <body>
+      
+      
+      <b>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <div class="container-fluid">
+    <a href="../Includes/homepage.html" class="navbar-brand"><b>ClassMaster</b> </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleBtn">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../Includes/classes.html">Our classes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/teamTeachers.html">Team teachers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/ongoing_activity.html">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a id="shoppingCartLink" class="nav-link" href="../Includes/shoppingcart.php">Shopping cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="logout()" style="cursor: pointer;">
+            <svg width="16" height="16" fill="currentColor">
+              <path d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+              <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Add event listener to the hamburger menu button
+    $("#navbarToggleBtn").click(function() {
+      // Toggle the collapse state of the menu
+      $("#navbarNavDropdown").collapse('toggle');
+    });
+  });
+</script>
+
+
+
+    
+    </b>
+    
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var isLoggedIn = localStorage.getItem("isLoggedIn");
+        var userType = localStorage.getItem("userType");
+
+        if (isLoggedIn === "true") {
+            if (userType === "user") {
+                // Remove the shopping cart link for user
+                var shoppingCartLink = document.getElementById("shoppingCartLink");
+                shoppingCartLink.parentNode.removeChild(shoppingCartLink);
+            }
+        }
+    });
+</script>
+
+        
+    <!-- GOOGLEMAPS -->
+
+
+<section class="banner-1 p-relative" style="height: 100vh;background: url('../Pictures/background.jpg');background-size: cover;">
+        <div class="overlay overlay-bg"></div>
+        
+        <div>
+            <div class="">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h3 class="text-custom-white fw-600 text-center" style="margin-top: 80px"><b>Unlock your artistic potential with Class Master</b></h3>
+                        <h5 class="text-custom-white fw-400 text-center">Discover, Create, and Master your artistry with the perfect class tailored just for you!</h5>
+                        <br>
+                        <h3 class="text-custom-white fw-400 text-center">
+                            Search for the class that suits you by location or by questions
+                            
+                        </h3>
+                        <div class="content-wrapper bg-white padding-20"  style="margin-bottom: 50px">
+                            <div class="content-box padding-tb-10">
+                                
+                                <ul class="nav nav-tabs mb-3">
+                                    <li class="nav-item"> <a class="nav-link tab fw-600 active" data-toggle="tab" href="#bylocation">By Location</a>
+                                    </li>
+                                    <li class="nav-item"> <a class="nav-link tab fw-600" data-toggle="tab" href="#byquestions">By Questions</a>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="bylocation">
+                                        <label class="text-light-black fw-700">Find classes near you</label>
+                                        <div class="input-group row">
+                                            <div class="input-group2 col-xl-8">
+                                                <input required name="search" id="address" type="search" class="form-control form-control-submit" placeholder="Enter your location" value="">
+                                                <div class="input-group-prepend">
+                                                    <button class="input-group-text text-light-green"><i class="fab fa-telegram-plane"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="input-group-append col-xl-4">
+                                                <input type="hidden" name="branch_id" id="branch_id">
+                                                <button class="btn-second btn-submit full-width" type="button" onclick="codeAddress();">Search Classes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="tab-pane mb-5" id="byquestions">
+                                    <label class="text-light-black fw-700">Answer the questions and find the classes that suit you best! (Please choose 1 - lowest, 5 - highest)</label>
+                                    <br>
+                                    <br>
+                                    <form action="" method="post" id="questionsForm">
+                                        <div class="row">
+                                            <div class=" col-xl-6 mb-3">
+                                                <label class="text-light-black fw-700">On a scale of 1-5, how interested are you in experimenting with abstract art or unconventional art forms?</label>
+                                                <select name="" class="form-control" id="question_1" required>
+                                                    <option value="">Select</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                             </div>
+                                             <div class=" col-xl-6 mb-3">
+                                                <label class="text-light-black fw-700">Rate your level of experience with art classes on a scale of 1-5 (1-no experience, 5-highly experienced).</label>
+                                                <select name="" class="form-control" id="question_2" required>
+                                                    <option value="">Select</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                             </div>
+                                             <div class=" col-xl-6">
+                                                <label class="text-light-black fw-700">On a scale of 1 to 5, how much do you enjoy building and working with your hands?</label>
+                                                <select name="" class="form-control" id="question_3" required>
+                                                    <option value="">Select</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                             </div>
+                                                <div class=" col-xl-6 mb-3">
+                                                <label class="text-light-black fw-700">On a scale of 1-5, how interested are you in developing skills in drawing, sculpting, or working with ceramics?</label>
+                                                <select name="" class="form-control" id="question_4" required>
+                                                    <option value="">Select</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                             </div>
+                                             <div class=" col-xl-6 mb-3">
+                                                <label class="text-light-black fw-700">How would you rate your skills in creating things on a scale of 1 to 5?</label>
+                                                <select name="" class="form-control" id="question_5" required>
+                                                    <option value="">Select</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                             </div>
+                                            <div class="col-xl-4">
+                                                <label class="text-light-black fw-700">&nbsp;</label>
+
+                                                <button class="btn-second btn-submit full-width" type="submit">Find</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- slider -->
+    <!-- Browse by category -->
+
+    <section class="browse-cat u-line section-padding" id="bylocation_div">
+        <div class="container">
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-8">
+
+                    <div id="map" style="height:400px;display:none" class="mb-3"></div>
+
+                    <div>
+                        <input type="hidden" id="my_lat">
+                        <input type="hidden" id="my_lng">
+                        <div id="info" style="display:none"></div>
+                    </div>
+
+                </div>
+                <div class="col-md-4" id="nearest_classes"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="browse-cat u-line section-padding" id="byquestions_div" style="display:none">
+        <div class="container">
+            <div class="row mt-5 justify-content-center" id="questions_classes">
+                
+            </div>
+        </div>
+    </section>
+
+
+    
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=geometry,places&key=AIzaSyBaly81Gpcpc7N2NnxajrSqd1Nl544wTfs"></script>
+    
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="modal-content">
+          <h3 id="teacherName"></h3>
+          <h3 id="cost"></h3>
+          <h3 id="description"></h3>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    
+  $(document).on("click", ".moreDetails", function() {
+  var teacherName = $(this).data('teacher');
+  var className = $(this).data('class');
+  var description = "";
+  var cost="";
+
+  for (var i = 0; i < locations.length; i++) {
+      
+    if (className === "Drawing" && teacherName==="Revital Cohen") {
+      cost = "150 NIS";
+      description = "In this class, students will learn about the theory and techniques of various visual arts, including painting and drawing. As teacher of this class, i will provide guidance and feedback to help students improve their skills and develop their own personal style. Whether you are a beginner or an experienced artist, this class is designed to inspire and challenge you to reach your full creative potential.";
+     
+      break; // Exit the loop since a match is found
+    } else if (className === "Sculpture" && teacherName==="Yoram Elazar") {
+      description = "In this class, students will learn about the different types of sculpture, including additive and subtractive methods. They will also learn about the design principles of sculpture. As teacher i will provide guidance and feedback to help students improve their skills and create unique and beautiful sculptures. Whether you are a beginner or an experienced sculptor, this class is designed to inspire your creativity and give you the skills you need to make sculptures.";
+     cost = "200 NIS";
+      break;
+    } else if (className === "Ceramics" && teacherName==="May Moledet") {
+      description = "In this class, students will learn about the different types of clay and how to work with them using various techniques, including hand-building and wheel-throwing. As teacher of this class, i will provide guidance and feedback to help students improve their skills and create unique and beautiful pieces.This class is designed to inspire your creativity and give you the skills you need to make functional and artistic ceramics that you can be proud of.";
+      cost="120 NIS";
+      break;
+    } else if (className === "Mosaic" && teacherName==="Dayana Reuven") {
+      description = "In this class, students will learn about the different materials used in mosaics, and the techniques used to create intricate patterns and designs. As teacher of the class i will provide guidance and feedback to help students improve their skills and create unique and beautiful mosaic art. Whether you are a beginner or an experienced artist, this class is designed to inspire your creativity and give you the skills you need to make intricate and visually striking mosaic art that you can proudly display in workplace.";
+      cost="250 NIS";
+      break;
+    } else if (className === "Gypsum sculpture" && teacherName==="Dror David") {
+      description = "In this class, students will learn about the properties of gypsum and how to sculpt and shape it into different forms and textures using various tools and techniques. As teacher of the class i will provide guidance and feedback to help students improve their skills and create meaningful and expressive sculptures. Whether you are a beginner or an experienced artist, this class is designed to inspire your creativity and give you the skills you need to make gypsum sculptures that are both beautiful and meaningful.";
+      cost="150 NIS";
+      break;
+    } else if (className === "Plasticine" && teacherName==="Yossef Zalman") {
+      description = "In this class, students will learn about the different properties of Plasticine, including how it can be molded and shaped into different forms and textures. As teacher of the class i will provide guidance and feedback to help students improve their skills and create unique and beautiful Plasticine creations. Whether you are a beginner or an experienced artist, this class is designed to inspire your creativity and give you the skills you need to make colorful and imaginative Plasticine creations.";
+      cost="70 NIS";
+      break;
+    } 
+  }
+
+  // Update the modal content with the relevant description
+  $("#cost").text("Cost: " + cost);
+  $("#teacherName").text("Teacher: " + teacherName);
+  $("#description").text("Description: " + description);
+ 
+
+  // Open the modal
+  $("#myModal").modal("show");
+});
+</script>
+
+
+
+    <script>
+        
+        
+    var geocoder = null;
+    var map = null;
+    var customerMarker = null;
+    var gmarkers = [];
+    var closest = [];
+
+    function initialize() {
+      geocoder = new google.maps.Geocoder();
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 9,
+        center: new google.maps.LatLng(32.08922, 34.7681868),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var infowindow = new google.maps.InfoWindow();
+      var marker, i;
+      var bounds = new google.maps.LatLngBounds();
+      document.getElementById('info').innerHTML = "<p><b>Found " + locations.length + " classes</b></p>";
+      for (i = 0; i < locations.length; i++) {
+        var location = locations[i];
+        var pt = new google.maps.LatLng(parseFloat(location.location.lat), parseFloat(location.location.lng));
+        bounds.extend(pt);
+        marker = new google.maps.Marker({
+          position: pt,
+          map: map,
+          icon: locations[i][5],
+          address: location.address,
+          title: location.className+' | '+location.teacherName,
+          html: "Class: " + location.className + "<br> Teacher: " + location.teacherName + "<br> Address: " + location.address
+        });
+        gmarkers.push(marker);
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(marker.html);
+              infowindow.open(map, marker);
+            }
+          })
+          (marker, i));
+      }
+      map.fitBounds(bounds);
+
+    }
+
+    function codeAddress() {
+        
+      
+      $("#byquestions_div").hide();
+      $("#bylocation_div").show();
+      
+      $("#map").show();
+      $('html, body').animate({ scrollTop: $('#map').offset().top }, 'slow');
+      var numberOfResults = 14;
+      var address = document.getElementById('address').value;
+      geocoder.geocode({
+        'address': address
+      }, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          if (customerMarker) customerMarker.setMap(null);
+          $("#my_lat").val(results[0].geometry.location.lat());
+          $("#my_lng").val(results[0].geometry.location.lng());
+          customerMarker = new google.maps.Marker({
+            map: map,
+            icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+            position: results[0].geometry.location
+          });
+          closest = findClosestN(results[0].geometry.location, numberOfResults);
+          // get driving distance
+          closest = closest.splice(0, numberOfResults);
+          calculateDistances(results[0].geometry.location, closest, numberOfResults);
+        } else {
+          alert('Geocode was not successful for the following reason: ' + status);
+        }
+      });
+    }
+
+    function findClosestN(pt, numberOfResults) {
+      var closest = [];
+      //document.getElementById('info').innerHTML += "processing " + gmarkers.length + "<br>";
+      for (var i = 0; i < gmarkers.length; i++) {
+        gmarkers[i].distance = google.maps.geometry.spherical.computeDistanceBetween(pt, gmarkers[i].getPosition());
+        //document.getElementById('info').innerHTML += "process " + i + ":" + gmarkers[i].getPosition().toUrlValue(6) + ":" + gmarkers[i].distance.toFixed(2) + "<br>";
+        gmarkers[i].setMap(null);
+        closest.push(gmarkers[i]);
+      }
+      closest.sort(sortByDist);
+      return closest;
+    }
+
+    function sortByDist(a, b) {
+      return (a.distance - b.distance)
+    }
+
+    function calculateDistances(pt, closest, numberOfResults) {
+      var service = new google.maps.DistanceMatrixService();
+      var request = {
+        origins: [pt],
+        destinations: [],
+        travelMode: google.maps.TravelMode.DRIVING,
+        unitSystem: google.maps.UnitSystem.METRIC,
+        avoidHighways: false,
+        avoidTolls: false
+      };
+      for (var i = 0; i < closest.length; i++) {
+        request.destinations.push(closest[i].getPosition());
+      }
+      service.getDistanceMatrix(request, function(response, status) {
+        if (status != google.maps.DistanceMatrixStatus.OK) {
+          alert('Error was: ' + status);
+        } else {
+          var origins = response.originAddresses;
+          var destinations = response.destinationAddresses;
+          var outputDiv = "";
+
+          var results = response.rows[0].elements;
+          // save title and address in record for sorting
+            console.log(closest);
+          for (var i = 0; i < closest.length; i++) {
+            results[i].title = closest[i].title;
+            results[i].address = closest[i].address;
+            results[i].lat = closest[i].position.lat();
+            results[i].lng = closest[i].position.lng();
+            results[i].idx_closestMark = i;
+          }
+          results.sort(sortByDistDM);
+          console.log(results);
+          
+            for (var i = 0; i<3; i++){
+                closest[i].setMap(map);
+                 var title = results[i].title.split(' | ');
+                 var class_name = title[0];
+                 var teacher_name = title[1];
+                 var registerButtonLink = class_name.replace(/\s+/g, '-').toLowerCase() + '.html';
+                outputDiv += "<div class='card shadow mb-3'><div class='card-body'><div class='mb-3'><a href='javascript:google.maps.event.trigger(closest[" + results[i].idx_closestMark + "],\"click\");'>" + class_name + '</a><br>' + results[i].address + "<br>" + results[i].distance.text + ' appoximately ' + results[i].duration.text + '</div> <button data-lat="'+results[i].lat+'" data-lng="'+results[i].lng+'" class="btn btn-primary directions">Directions</button> <a href="'+registerButtonLink+'" class="btn btn-success">Register</a><br><br><button class="btn btn-outline-primary moreDetails" data-class="'+class_name+'" data-teacher="'+teacher_name+'">More details</button></div></div>';
+          }
+          
+          
+          
+        
+
+          $("#nearest_classes").html(outputDiv);
+        }
+      });
+    }
+
+    function sortByDistDM(a, b) {
+      return (a.distance.value - b.distance.value)
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+        
+        
+    function getDirections(location1, location2){
+        //var map;
+        var start = new google.maps.LatLng(location1.lat,location1.lng);
+        var end = new google.maps.LatLng(location2.lat,location2.lng);
+        var option ={
+            zoom : 10,
+            center : start 
+        };
+        map = new google.maps.Map(document.getElementById('map'),option);
+        var display = new google.maps.DirectionsRenderer();
+        var services = new google.maps.DirectionsService();
+        display.setMap(map);
+            var request ={
+                origin : start,
+                destination:end,
+                travelMode: 'DRIVING'
+            };
+            services.route(request,function(result,status){
+                if(status =='OK'){
+                    display.setDirections(result);
+                }
+            });
+    }
+        
+        
+    $(document).on('click', '.directions', function(){
+       var destination_lat = $(this).data('lat'); 
+       var destination_lng = $(this).data('lng'); 
+       var location_lat = $("#my_lat").val();
+       var location_lng = $("#my_lng").val();
+       var location1 = { lat: location_lat, lng: location_lng };
+       var location2 = { lat: destination_lat, lng: destination_lng };
+       getDirections(location1, location2);
+    });
+        
+    $("#questionsForm").submit(function(e){
+        e.preventDefault();
+        $("#bylocation_div").hide();
+        $("#byquestions_div").show();
+        $('html, body').animate({ scrollTop: $('#byquestions_div').offset().top }, 'slow');
+        var q1 = $("#question_1").val();
+        var q2 = $("#question_2").val();
+        var q3 = $("#question_3").val();
+        var q4 = $("#question_4").val();
+        var q5 = $("#question_5").val();
+        var total_score = parseInt(q1)+parseInt(q2)+parseInt(q3)+parseInt(q4)+parseInt(q5);
+        
+        var classes = "";
+        
+        if(total_score >= 5 && total_score <= 11){
+            for(var i=0; i<locations.length; i++){
+                
+                if(locations[i].className=='Drawing' ){
+                    classes += "<div class='col-md-4'><div class='card shadow mb-3'><div class='card-body'><div class='mb-3'><a href='#!'>" + locations[i].className + ' ('+locations[i].teacherName+')</a><br>' + locations[i].address + '<div class="mt-3"><a href="../Includes/drawing.html" class="btn btn-success">Register</a>  <button class="btn btn-outline-primary moreDetails" data-class="'+locations[i].className+'" data-teacher="'+locations[i].teacherName+'">More details</button></div></div></div></div></div>';
+                }
+                if(locations[i].className=='Plasticine'){
+                    classes += "<div class='col-md-4'><div class='card shadow mb-3'><div class='card-body'><div class='mb-3'><a href='#!'>" + locations[i].className + ' ('+locations[i].teacherName+')</a><br>' + locations[i].address + '<div class="mt-3"><a href="../Includes/plasticine.html" class="btn btn-success">Register</a>  <button class="btn btn-outline-primary moreDetails" data-class="'+locations[i].className+'" data-teacher="'+locations[i].teacherName+'">More details</button></div></div></div></div></div>';
+                }
+            }   
+        }
+        
+        if(total_score >= 12 && total_score <= 18){
+            for(var i=0; i<locations.length; i++){
+                if(locations[i].className=='Ceramics'){
+                    classes += "<div class='col-md-4'><div class='card shadow mb-3'><div class='card-body'><div class='mb-3'><a href='#!'>" + locations[i].className + ' ('+locations[i].teacherName+')</a><br>' + locations[i].address + '<div class="mt-3"><a href="../Includes/ceramics.html" class="btn btn-success">Register</a>  <button class="btn btn-outline-primary moreDetails" data-class="'+locations[i].className+'" data-teacher="'+locations[i].teacherName+'">More details</button></div></div></div></div></div>';
+                }
+                if(locations[i].className=='Sculpture'){
+                    classes += "<div class='col-md-4'><div class='card shadow mb-3'><div class='card-body'><div class='mb-3'><a href='#!'>" + locations[i].className + ' ('+locations[i].teacherName+')</a><br>' + locations[i].address + '<div class="mt-3"><a href="../Includes/sculpture.html" class="btn btn-success">Register</a>  <button class="btn btn-outline-primary moreDetails" data-class="'+locations[i].className+'" data-teacher="'+locations[i].teacherName+'">More details</button></div></div></div></div></div>';
+                }
+            }   
+        }
+        
+        if(total_score >= 19 && total_score <= 25){
+            for(var i=0; i<locations.length; i++){
+                if(locations[i].className=='Mosaic'){
+                    classes += "<div class='col-md-4'><div class='card shadow mb-3'><div class='card-body'><div class='mb-3'><a href='#!'>" + locations[i].className + ' ('+locations[i].teacherName+')</a><br>' + locations[i].address + '<div class="mt-3"><a href="../Includes/mosaic.html" class="btn btn-success">Register</a>  <button class="btn btn-outline-primary moreDetails" data-class="'+locations[i].className+'" data-teacher="'+locations[i].teacherName+'">More details</button></div></div></div></div></div>';
+                }
+                if(locations[i].className=='Gypsum sculpture'){
+                    classes += "<div class='col-md-4'><div class='card shadow mb-3'><div class='card-body'><div class='mb-3'><a href='#!'>" + locations[i].className + ' ('+locations[i].teacherName+')</a><br>' + locations[i].address + '<div class="mt-3"><a href="../Includes/gypsum-sculpture.html" class="btn btn-success">Register</a>  <button class="btn btn-outline-primary moreDetails" data-class="'+locations[i].className+'" data-teacher="'+locations[i].teacherName+'">More details</button></div></div></div></div></div>';
+                }
+            }   
+        }
+        
+        $("#questions_classes").html(classes);
+        
+    });
+        
+    $(document).ready(function() { 
+      var input = document.getElementById('address');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+      google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            var place = autocomplete.getPlace();
+            //alert(place.geometry.location.lat());
+            //alert(place.geometry.location.lng());
+        });
+
+    });
+    
+    </script>
+
+
+
+  
+    <main>
+       
+       <section class="pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h3 class="mb-3">Gallery</h3>
+          </div>
+          <div class="col-6 text-right">
+            <a class="btn btn-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+              <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="btn btn-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+              <i class="fa fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="col-12">
+            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner" id="photo-gallery">
+                <!-- Dynamically generated gallery items will be inserted here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+      
+    $(".tab").click(function(){
+        var tab = $(this).attr('href');
+        if(tab=='#byquestions'){
+            $(".banner-1").css('height', '100%');
+        }else{
+            $(".banner-1").css('height', '100vh');
+        }
+    })
+      
+    $(document).ready(function() {
+      // Fetch photos via AJAX
+      $.ajax({
+        url: "../Includes/get_photos.php",
+        method: "GET",
+        dataType: "json",
+        success: function(response) {
+          // Process the response
+          if (response.success) {
+            var photos = response.photos;
+            var carouselInner = $(".carousel-inner");
+
+            // Loop through the photos and display them
+            for (var i = 0; i < photos.length; i += 3) {
+              var carouselItem = $("<div>").addClass("carousel-item");
+              if (i === 0) {
+                carouselItem.addClass("active");
+              }
+
+              var row = $("<div>").addClass("row");
+
+              // Loop through the next three photos and create columns for each
+              for (var j = i; j < i + 3 && j < photos.length; j++) {
+                var photo = photos[j];
+
+                var col = $("<div>").addClass("col-md-4 mb-3");
+                var card = $("<div>").addClass("card");
+                var img = $("<img>")
+                  .addClass("img-fluid")
+                  .attr("alt", photo.filename)
+                  .attr("src", "data:image/jpeg;base64," + photo.photo);
+
+                // Add click event handler to open the modal on image click
+                img.on("click", function() {
+                  var imageUrl = $(this).attr("src");
+                  $("#modalImage").attr("src", imageUrl);
+                  $("#imageModal").modal("show");
+                });
+
+                card.append(img);
+                col.append(card);
+                row.append(col);
+              }
+
+              carouselItem.append(row);
+              carouselInner.append(carouselItem);
+            }
+
+            // Initialize the Bootstrap Carousel
+            $("#carouselExampleIndicators2").carousel();
+          } else {
+            console.error("Error retrieving photos:", response.error);
+          }
+        },
+        error: function(xhr, status, error) {
+          console.error("AJAX Error:", error);
+        }
+      });
+    });
+  </script>
+
+     <!-- Modal markup -->
+  <div class="modal" id="imageModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img class="img-fluid" id="modalImage" src="" alt="">
+      </div>
+      
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+     
+    </div>
+  </div>
+</div>
+         
+ 
+
+        
+  <!--footer-->
+  <footer class="footer-area footer--light">
+  <div class="footer-big">
+    <!-- start .container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="footer-widget">
+            <div class="widget-about">
+              
+              <p class="pha"><b>With us you can find any art class that interests you, and with one click register for it. Feel free to contact us for any reason you may have ♥</b></p>
+              
+            </div>
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-4 -->
+     
+        <!-- end /.col-md-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h4 class="footer-widget-title tit"><b>Quick Links:</b></h4>
+              <ul>
+                <li class="li1">
+                  <a href="../Includes/homepage.html" class="aaa">Home</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/classes.html" class="aaa">Our classes</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/teamTeachers.html" class="aaa">Our teachers</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/ongoing_activity.html" class="aaa">Activities</a>
+                </li>
+                 <li class="li1">
+                            
+        		    <a  onclick="logout()" class="aaa" style="cursor: pointer;">Log out</a>
+                </li>
+               
+                
+                
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-lg-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Contact us:</b></h4>
+              <ul>
+				<li class="li1">
+				<i class="fas fa-mobile-alt" style="font-size:24px"></i>
+                  <a href="tel:344-755-111" class="aaa">03-7544321</a>
+               </li>
+                <li class="li1">
+                   <i class="far fa-envelope-open" ></i> 
+                 <a href="mailto:ClassMasterOn@gmail.com" title="click to send mail">ClassMasterOn@gmail.com</a>
+                </li>
+				<li class="li1">
+				
+				<i class="fa fa-map-marker"style="font-size:20px;"></i> <a href="#" onclick="openMapPopup('Pinkas 4, Tel Aviv-Yafo')">Pinkas 4, Tel Aviv-Yafo</a></a>
+				</li>
+
+               	<script>
+function openMapPopup(address) {
+    event.preventDefault();
+  // Create a URL for the Google Maps location based on the address
+  var mapUrl = 'https://www.google.com/maps?q=' + encodeURIComponent(address) ;
+  
+  // Set the width and height of the pop-up window
+  var width = 600;
+  var height = 400;
+  
+  // Calculate the position of the pop-up window to center it on the screen
+  var left = (window.innerWidth - width) / 2;
+  var top = (window.innerHeight - height) / 2;
+  
+  // Open the pop-up window with the Google Maps URL
+  window.open(mapUrl, 'Map', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+}
+</script>
+               	
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- Ends: .col-lg-3 -->
+		<div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Follow us:</b></h4>
+             <ul class="list-group">
+			  <li  class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a ><i class="fab fa-linkedin"></i> LinkedIn</a>
+			  </li>
+				 <a ><i class="fab fa-tumblr-square"></i> Twitter</a>       
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2"> 
+			  
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a href="https://github.com/maybakoch/classmaster" class="aaa" target="_blank"><i class="fab fa-git-square"></i> Github</a>
+				
+				<li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a class="aaa" target="_blank"><i class="fab fa-facebook-f" ></i> Facebook</a>
+			  </li>
+			 </ul>
+            
+			</div>
+		  </div>
+		</div>
+   </div>
+     
+      <!-- end /.row -->
+    </div>
+    <!-- end /.container -->
+  </div>
+  <!-- end /.footer-big -->
+
+  <div class="mini-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            
+               © Copyright 2023 - ClassMaster.  All rights reserved 
+			  
+              
+           
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  </body>
+
+</html>

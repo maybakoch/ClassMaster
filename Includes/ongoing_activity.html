@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+     <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/classes.css"> 
+     <script src="../JS/JS.js"></script>
+    <title>Activities</title>
+    <link rel="icon" href="../Pictures/logo4.jpg" type="image/icon type">
+	
+   <!-- for navbar-->
+  	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../Css/cssgooglemaps.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Spinnaker&display=swap" rel="stylesheet">
+     
+     <!-- for icon footer-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     
+    </head>
+    <body>  
+    <b>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <div class="container-fluid">
+    <a href="../Includes/homepage.html" class="navbar-brand"><b>ClassMaster</b> Activities</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggleBtn">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="../Includes/classes.html">Our classes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/teamTeachers.html">Team teachers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../Includes/ongoing_activity.html">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a id="shoppingCartLink" class="nav-link" href="../Includes/shoppingcart.php">Shopping cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="logout()" style="cursor: pointer;">
+            <svg width="16" height="16" fill="currentColor">
+              <path d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+              <path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Add event listener to the hamburger menu button
+    $("#navbarToggleBtn").click(function() {
+      // Toggle the collapse state of the menu
+      $("#navbarNavDropdown").collapse('toggle');
+    });
+  });
+</script>
+
+
+
+    
+    </b>
+   
+   <style>
+       header {
+  width: 100%;
+}
+
+.w3-image {
+  width: 100%;
+  object-fit: cover;
+}
+   </style>
+    
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var isLoggedIn = localStorage.getItem("isLoggedIn");
+        var userType = localStorage.getItem("userType");
+
+        if (isLoggedIn === "true") {
+            if (userType === "user") {
+                // Remove the shopping cart link for user
+                var shoppingCartLink = document.getElementById("shoppingCartLink");
+                shoppingCartLink.parentNode.removeChild(shoppingCartLink);
+            }
+        }
+    });
+</script>
+   <!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="../Pictures/background.jpg" alt="background" height="100">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>ClassMaster</b></span> <span class="w3-hide-small w3-text-light-grey">Art and more</span></h1>
+  </div>
+</header>
+<script>
+    
+    /* contact form */
+function fillcontact() {
+  var Email = document.mycontactForm.email;
+	  
+	  if (Email.value === "")
+    {
+        window.alert("Please enter a valid email address.");
+        Email.focus();
+        return false;
+    }
+	if (Email.value.indexOf("@", 0) < 0) 
+    {
+        window.alert("Please enter a valid email address.");
+        Email.focus();
+        return false;
+    }
+    if (Email.value.indexOf(".", 0) < 0)
+    {
+        window.alert("Please enter a valid email address.");
+        Email.focus();
+        return false;
+    }
+  
+  var regName = /^[a-zA-Z\s'-]+$/;
+  var Fullname = document.mycontactForm.name;
+  if (!regName.test(Fullname.value)) {
+    window.alert('Please enter a valid name.');
+    Fullname.focus();
+    return false;
+  }
+  
+  var subject = document.mycontactForm.subject;
+  if (!regName.test(subject.value)) {
+    window.alert('Please enter only letters.');
+    subject.focus();
+    return false;
+  }
+  
+  var message = document.mycontactForm.message;
+  if (!regName.test(message.value)) {
+    window.alert('Please enter only letters.');
+    message.focus();
+    return false;
+  }
+   
+  window.alert("Thank you for writing to us. We will contact you soon!");
+  return true;
+}
+    
+</script>
+<!-- Links to the parts of the pages -->
+<header class="w3-display-container w3-content w3-wide w3-opacity-min" style="max-width:1500px;" id="home">
+  <div class="w3-display-bottommiddle w3-margin-bottom w3-center">
+    <div class="d-flex justify-content-center">
+      <button class="w3-button w3-black w3-padding-large m-1" onclick="scrollToSection('projects')">Upload Photo</button>
+      <button class="w3-button w3-black w3-padding-large m-1" onclick="scrollToSection('about')">Fill Feedback</button>
+      <button class="w3-button w3-black w3-padding-large m-1" onclick="scrollToSection('Schedule')">Schedule</button>
+      <button class="w3-button w3-black w3-padding-large m-1" onclick="scrollToSection('contactForm')">Contact</button>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Custom styles */
+  @media (max-width: 768px) {
+    /* Styles for screens up to 576px wide */
+    .w3-display-bottommiddle {
+      position: static;
+      transform: none;
+      margin-top: 10px;
+    }
+    .d-flex.justify-content-center {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+
+
+<script>
+  // Scroll to the specified section
+  function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  }
+</script>
+    <!-- Page content -->
+    <div class="w3-content w3-padding" style="max-width:1564px">
+    
+      <!-- Project Section -->
+      <div class="w3-container w3-padding-32" id="projects">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Your Media </h3>
+      </div>
+    
+        <!-- Media Section -->
+        
+    <div class="Media" style="background-color: rgba(236, 255, 224, 1); border-style: none; border-radius: 20px; margin-top: 10px; padding: 20px 20px; max-width: 600px;">
+
+  <i class="material-icons" style="font-size: 30px; color: rgba(152, 157, 220, 1)">add_a_photo</i>
+  <label for="formFileMultiple" class="form-label">Upload your memories from our classes! Add some images and videos</label>
+  <br><br>
+      
+     
+
+        
+         <form action="../Includes/upload.php" method="post" enctype="multipart/form-data">
+		<input type="file" name="photo" >
+		<input type="submit"  value="Upload">
+	</form>
+  
+    </div>
+   
+
+      <!-- feedback Section -->
+      <div class="w3-container w3-padding-32" id="about">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Feedback</h3>
+        <div class="feedback" style="background-color: rgba(255, 224, 201, 1);border-style: none; border-radius: 20px; margin-top:10px; padding: 20px 20px; max-width: 600px;">
+         <p> <i class="material-icons" style="font-size:30px;color:rgba(152, 157, 220, 1)">feedback</i>  Click on the button at the bottom of this page to open the feedback form.<br> Fill it at any time and help us to get better!
+        </p>
+		 <button class="open-button" onclick="openForm()">Open Feedback Form</button>
+		
+		
+      </div>
+      </div>
+     
+      
+      <div class="form-popup" id="myForm">
+        <form action="../Includes/feedback.php" name="myForm" onsubmit="return addfeedback()" class="form-container" method="post">
+          <h1>Art Class Feedback</h1>
+      
+          <label for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter your Name" name="name" required>
+          <label for="class"><b>The class you want to rate</b></label>
+          
+		  <select name="className" value="" selected required >
+				<option value="" selected disabled>--Select your choice--</option>							
+				<option value="Drawing" label="Drawing"></option>
+				<option value="Sculpture" label="Sculpture"></option>
+				<option value="Ceramics" label="Ceramics"></option>
+				<option value="Mosaic" label="Mosaic"></option>
+				<option value="Gypsum sculpture" label="Gypsum sculpture"></option>
+				<option value="Plasticine" label="Plasticine"></option>
+		  </select>
+          <br> 
+		  <br>
+      
+          <label for="feedback"><b>rate your expirience in scale of 1-10</b></label><br>
+          <input type="number" placeholder="10" name="rate" min="1" max="10" required>
+          <br>
+          <br>
+          <label for="again"><b>Will you sign again?</b></label>
+          <input type="text" placeholder="Of Course!" name="again" required>
+          <br> 
+          
+          <label for="feedback"><b>Add some notes</b></label>
+          <textarea placeholder="Enter feedback" name="feedback" required></textarea>
+
+          <button onclick="showAlert()" type="submit" value="submit" class="btn">Submit Feedback</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+      
+      <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      
+     
+      
+      </script>
+      
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      <div class="elfsight-app-146ea3da-dbaa-43cc-b163-8252e212b8aa w3-container w3-padding-32" id="Schedule"></div>
+     
+        
+      <!-- Contact Section -->
+      <div class="w3-container w3-padding-32" id="contactForm">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+        <p>Lets get in touch and talk about your next project.</p>
+        
+            <form action="../Includes/contact.php" id="mycontactForm" name="mycontactForm" onsubmit="return fillcontact();" method="post">
+          <input class="w3-input w3-border" type="text" placeholder="Name" required name="name">
+          <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="email">
+          <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="subject">
+          <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="message">
+          <button class="w3-button w3-black w3-section" onclick="showAlert()" type="submit" value="submit" >
+            SEND MESSAGE
+          </button>
+        </form>
+      </div>
+	  
+    <!-- End page content -->
+    </div>
+    
+   
+ <!--footer-->
+  <footer class="footer-area footer--light">
+  <div class="footer-big">
+    <!-- start .container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="footer-widget">
+            <div class="widget-about">
+              
+              <p class="pha"><b>With us you can find any art class that interests you, and with one click register for it. Feel free to contact us for any reason you may have ♥</b></p>
+              
+            </div>
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-4 -->
+     
+        <!-- end /.col-md-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h4 class="footer-widget-title tit"><b>Quick Links:</b></h4>
+              <ul>
+                <li class="li1">
+                  <a href="../Includes/homepage.html" class="aaa">Home</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/classes.html" class="aaa">Our classes</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/teamTeachers.html" class="aaa">Our teachers</a>
+                </li>
+                <li class="li1">
+                  <a href="../Includes/ongoing_activity.html" class="aaa">Activities</a>
+                </li>
+                 <li class="li1">
+                            
+        		    <a  onclick="logout()" class="aaa" style="cursor: pointer;">Log out</a>
+                </li>
+               
+                
+                
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-lg-3 -->
+
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Contact us:</b></h4>
+              <ul>
+				<li class="li1">
+				<i class="fas fa-mobile-alt" style="font-size:24px"></i>
+                  <a href="tel:344-755-111" class="aaa">03-7544321</a>
+               </li>
+                <li class="li1">
+                   <i class="far fa-envelope-open" ></i> 
+                 <a href="mailto:ClassMasterOn@gmail.com" title="click to send mail">ClassMasterOn@gmail.com</a>
+                </li>
+				<li class="li1">
+				
+				<i class="fa fa-map-marker"style="font-size:20px;"></i> <a href="#" onclick="openMapPopup('Pinkas 4, Tel Aviv-Yafo')">Pinkas 4, Tel Aviv-Yafo</a></a>
+				</li>
+
+               	<script>
+function openMapPopup(address) {
+    event.preventDefault();
+  // Create a URL for the Google Maps location based on the address
+  var mapUrl = 'https://www.google.com/maps?q=' + encodeURIComponent(address) ;
+  
+  // Set the width and height of the pop-up window
+  var width = 600;
+  var height = 400;
+  
+  // Calculate the position of the pop-up window to center it on the screen
+  var left = (window.innerWidth - width) / 2;
+  var top = (window.innerHeight - height) / 2;
+  
+  // Open the pop-up window with the Google Maps URL
+  window.open(mapUrl, 'Map', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
+}
+</script>
+               	
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- Ends: .col-lg-3 -->
+		<div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title tit"><b>Follow us:</b></h4>
+             <ul class="list-group">
+			  <li  class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a ><i class="fab fa-linkedin"></i> LinkedIn</a>
+			  </li>
+				 <a ><i class="fab fa-tumblr-square"></i> Twitter</a>       
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2"> 
+			  
+			  <li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a href="https://github.com/maybakoch/classmaster" class="aaa" target="_blank"><i class="fab fa-git-square"></i> Github</a>
+				
+				<li class="list-group-item bg-transparent li1 border-0 p-0 mb-2">
+				<a class="aaa" target="_blank"><i class="fab fa-facebook-f" ></i> Facebook</a>
+			  </li>
+			 </ul>
+            
+			</div>
+		  </div>
+		</div>
+   </div>
+     
+      <!-- end /.row -->
+    </div>
+    <!-- end /.container -->
+  </div>
+  <!-- end /.footer-big -->
+
+  <div class="mini-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            
+               © Copyright 2023 - ClassMaster.  All rights reserved 
+			  
+              
+           
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  </body>
+
+</html>
