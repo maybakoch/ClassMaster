@@ -55,7 +55,7 @@ function validateForm() {
         phone.focus();
         return false;
    }
-   alert ("Your order has been received in the system successfully! See you soon!");
+  
    return true;
 	
 	
